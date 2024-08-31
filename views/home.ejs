@@ -1,0 +1,20 @@
+<DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+</head>
+<body>
+  <!-- using the msg variable from server.js will render the message we typed -->
+<h1><%= msg %></h1>
+  <ul>
+    <!-- create a loop to render the RESTAURANT object from server.js -->
+    <% RESTAURANT.forEach((item) => { %>
+
+        <li><%= item.name %>: <%= item.address %>: <%= item.phone %></li>
+        
+    <% }); %>
+  </ul>
+</body>
+</html> 
