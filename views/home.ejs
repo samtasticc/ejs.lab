@@ -6,6 +6,8 @@
   <title>Home</title>
 </head>
 <body>
+  <!-- This allows nav.ejs to be included in the nav bar on your webpage. -->
+  <%- include('./partials/nav') %>
   <!-- using the msg variable from server.js will render the message we typed -->
 <h1><%= msg %></h1>
   <ul>

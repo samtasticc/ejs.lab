@@ -59,8 +59,11 @@ app.get('/', (req, res) => {
       // otherwise, calling RESTAURANT allows you to call <%= RESTAURANT.name %> in home.ejs
       //its just two different ways to write the same code.
       RESTAURANT
-    });
-    
+    });    
 });
+
+app.get('/menu', (req, res) => {
+  res.render('menu.ejs')
+})
 
 app.listen(3000);
