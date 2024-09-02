@@ -54,10 +54,13 @@ const RESTAURANT = {
 app.get('/', (req, res) => {
     // the below call back function will modify the existing route that handles the homepage, aka render the home page
     res.render('home.ejs', {
-        msg: 'Welcome to The Green Byte Bistro',
-        RESTAURANT
+      msg: 'Welcome to The Green Byte Bistro',
+      // calling name: RESTAURANT.name allows you to not have to use/call RESTAURANT in home.ejs
+      // otherwise, calling RESTAURANT allows you to call <%= RESTAURANT.name %> in home.ejs
+      //its just two different ways to write the same code.
+      RESTAURANT
     });
-
+    
 });
 
 app.listen(3000);

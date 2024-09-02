@@ -10,11 +10,10 @@
 <h1><%= msg %></h1>
   <ul>
     <!-- create a loop to render the RESTAURANT object from server.js -->
-    <% RESTAURANT.forEach((item) => { %>
+      <%= RESTAURANT.name %>
+      <%= RESTAURANT.address %>
+      <%= RESTAURANT.phone %>
 
-        <li><%= item.name %>: <%= item.address %>: <%= item.phone %></li>
-        
-    <% }); %>
   </ul>
 </body>
 </html> 
