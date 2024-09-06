@@ -8,11 +8,13 @@
 <body>
 <!-- This allows nav.ejs to be included in the nav bar on your webpage. -->
   <%- include('./partials/nav') %>
-  <h1>Full Menu</h1>
-  <% RESTAURANT.menu.forEach((item) => { %>
-    <!-- check this to an li -->
-    <ul><%= item.name %> <%= item.price %> <%= item.rating %> <%= item.rating %> <%= item.details %></ul>
-  <% }); %>
-
+  <h1>Categories</h1>
+  <ul>
+    <% RESTAURANT.menu.forEach((item, index) => { %>
+    <a href="/<%= index %>">
+        <li><%= item.mains %>: <%= item.deserts %>: <%= item.sides %></li>
+    <% }); %>
+    </a>
+   </ul>
 </body>
 </html>

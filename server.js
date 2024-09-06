@@ -65,9 +65,17 @@ app.get('/', (req, res) => {
 app.get('/menu', (req, res) => {
   res.render('menu.ejs', {
     RESTAURANT
+  });
+});
+
+app.get('/menu/:category', (req, res) => {
+  const index = req.params.itemId
+  res.render('category.ejs', {
+    msg: 'Categories',
+    RESTAURANT,
+    
   })
-
-
+  
 })
 
 app.listen(3000);
