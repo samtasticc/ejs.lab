@@ -54,7 +54,6 @@ const RESTAURANT = {
 app.get('/', (req, res) => {
     // the below call back function will modify the existing route that handles the homepage, aka render the home page
     res.render('home.ejs', {
-      msg: 'Welcome to The Green Byte Bistro',
       // calling name: RESTAURANT.name allows you to not have to use/call RESTAURANT in home.ejs
       // otherwise, calling RESTAURANT allows you to call <%= RESTAURANT.name %> in home.ejs
       //its just two different ways to write the same code.
@@ -69,13 +68,15 @@ app.get('/menu', (req, res) => {
 });
 
 app.get('/menu/:category', (req, res) => {
-  const index = req.params.itemId
+  // created the req.params category 
+  const category = req.params.category
+  console.log(req.params.category)
+  // pass an array of data called menuItems containing only items that match the req.params category to the category.ejs view
+  const menuItems = RESTAURANT.menu.filter(item => item.category === category);
   res.render('category.ejs', {
-    msg: 'Categories',
-    RESTAURANT,
-    
+    menuItems,
+   
   })
-  
 })
 
 app.listen(3000);

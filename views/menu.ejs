@@ -9,10 +9,15 @@
 <!-- This allows nav.ejs to be included in the nav bar on your webpage. -->
   <%- include('./partials/nav') %>
   <h1>Full Menu</h1>
+  <ul>
   <% RESTAURANT.menu.forEach((item) => { %>
-    <!-- check this to an li -->
-    <ul><%= item.name %> <%= item.price %> <%= item.rating %> <%= item.rating %> <%= item.details %></ul>
+    <li>
+      <h2><%= item.name %></h2>
+      <p>Price: $<%= item.price %></p>
+      <p>Rating: <%= item.rating %> stars</p>
+      <p><%= item.details %></p>
+    </li>
   <% }); %>
-
+  </ul>
 </body>
 </html>

@@ -3,18 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Menu</title>
+  <title><%= category %></title>
 </head>
 <body>
 <!-- This allows nav.ejs to be included in the nav bar on your webpage. -->
   <%- include('./partials/nav') %>
-  <h1>Categories</h1>
-  <ul>
-    <% RESTAURANT.menu.forEach((item, index) => { %>
-    <a href="/<%= index %>">
-        <li><%= item.mains %>: <%= item.deserts %>: <%= item.sides %></li>
-    <% }); %>
-    </a>
-   </ul>
+  <h1><%= category %></h1>
+  <% if (menuItems.length > 0) { %>
+    <ul>
+      <% menuItems.forEach(item => { %>
+        <li>
+          <h2><%= item.name %></h2>
+          <p>Price: $<%= item.price %></p>
+          <p>Rating: <%= item.rating %> stars</p>
+          <p><%= item.details %></p>
+        </li>
+        <% }) %>
+    </ul>
+  <% } else { %>
+    <p>No items found in this category</p>
+  <% } %>
 </body>
 </html>

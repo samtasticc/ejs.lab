@@ -9,12 +9,12 @@
   <!-- This allows nav.ejs to be included in the nav bar on your webpage. -->
   <%- include('./partials/nav') %>
   <!-- using the msg variable from server.js will render the message we typed -->
-<h1><%= msg %></h1>
+<h1>Home Page</h1>
   <ul>
     <!-- create a loop to render the RESTAURANT object from server.js -->
-      <%= RESTAURANT.name %>
-      <%= RESTAURANT.address %>
-      <%= RESTAURANT.phone %>
+      <h2><%= RESTAURANT.name %></h2>
+      <p><%= RESTAURANT.address %></p>
+      <p><%= RESTAURANT.phone %></p>
 
   </ul>
 </body>
